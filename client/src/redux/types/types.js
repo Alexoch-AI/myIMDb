@@ -1,0 +1,5 @@
+export const SEARCH_FILM = 'SEARCH_FILM'
+export const TAKE_FILM = 'TAKE_FILM'
+export const SEARCH_GENGER_FILM = 'SEARCH_GENGER_FILM'
+
+

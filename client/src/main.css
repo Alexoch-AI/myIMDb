@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+body{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background: url(http://ru.globewalls.art/wp-content/uploads/2018/10/%D0%9B%D0%B8%D0%BD%D0%B8%D1%8F-%D0%94%D1%8B%D0%BC-%D0%A2%D0%B5%D0%BD%D1%8C-%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9-%D1%84%D0%BE%D0%BD.jpg) no-repeat;
+ color: white;
+ height: 100%;
+ padding-left: '50px';
+ background-position: center top;
+ background-color: black;
+}
