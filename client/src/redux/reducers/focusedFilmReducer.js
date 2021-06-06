@@ -5,7 +5,7 @@ const focusedFilmReducer = (state = {}, action) => {
 
     case TAKE_FILM:
       return action.payload
-
+    
     default:
       return state
   }

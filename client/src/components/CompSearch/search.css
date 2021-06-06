@@ -1,29 +1,15 @@
-.subscribe {
-  display: inline-flex;
-  width: auto;
-  max-width: 100%;
+.mostInput{
+  padding-left: 10px;
+  background-color: white;
+  border-radius: 20px 0 0 20px;
+  font-size: 28px;
+  border: none
 }
 
-.subscribe input,
-.subscribe button {
-  display: block;
-  padding: 8px 10px;
-  border: 0;
-  background: transparent;
-  font: inherit;
-  box-sizing: border-box;
-}
-
-.subscribe input {
-  border: 1px solid #ccc;
-  border-right: 0;
-  border-radius: 6px 0 0 6px;
-}
-
-.subscribe button {
-  border: 1px solid #ccc;
-  border-radius: 0 6px 6px 0;
-  background: #00cfae;
-  color: #fff;
-  text-transform: uppercase;
+.mostInput:focus{
+  outline: none;
+  color: black;
+  place-content: none;
+  padding: 0 0 0 0;
+  padding-left: 10px;
 }

@@ -11,7 +11,6 @@ function Body() {
       alignItems="center"
       justify="center">
       <div className='background' />
-
       <Grid item xs={12}>
         <CompSearch />
       </Grid>

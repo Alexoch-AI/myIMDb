@@ -2,7 +2,9 @@ const initState = () => {
   const state = {
     films: [],
     focusedFilm: {},
-    genresFilms: []
+    likesFilms: [],
+    urlTrailer: '',
+    loader: false,
   }
   return state
 }

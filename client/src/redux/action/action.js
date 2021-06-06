@@ -1,18 +1,17 @@
-import { SEARCH_FILM, SEARCH_GENGER_FILM, TAKE_FILM } from "../types/types"
-
-
+import { GET_TRAILER, LOADER_FALSE, LOADER_TRUE, SEARCH_FILM, SEARCH_LIKED_FILM, TAKE_FILM } from "../types/types"
 
 export const thunkAllFilms = (searchInput) => async (dispatch, getState) => {
-  const response = await fetch(`https://imdb8.p.rapidapi.com/title/find?q=${searchInput}`, {
+  dispatch(actionLoaderTrue())
+  const response = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${searchInput}`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": `${process.env.REACT_APP_X_RAPIDAPI_KEY}`,
-      "x-rapidapi-host": "imdb8.p.rapidapi.com"
+      'accept': 'application/json',
+      'X-API-KEY': `${process.env.REACT_APP_API_KEY}`,
     }
   })
   const serverResponse = await response.json()
-  const currentSearch = serverResponse.results.filter(el => el.titleType === "movie" || el.titleType === "tvSeries")
-  dispatch(getAllFilms(currentSearch))
+  dispatch(getAllFilms(serverResponse.films.slice(0, 7)))
+  dispatch(actionLoaderFalse())
 }
 
 export const getAllFilms = (films) => {
@@ -24,16 +23,17 @@ export const getAllFilms = (films) => {
 
 
 export const thunkFocusFilms = (id) => async (dispatch, getState) => {
-  const response = await fetch(`https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${id}&currentCountry=US`, {
+  dispatch(actionLoaderTrue())
+  const response = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${id}`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": `${process.env.REACT_APP_X_RAPIDAPI_KEY}`,
-      "x-rapidapi-host": "imdb8.p.rapidapi.com"
+      'accept': 'application/json',
+      'X-API-KEY': `${process.env.REACT_APP_API_KEY}`,
     }
   })
   const serverResponse = await response.json()
-  console.log('serverResponse', serverResponse)
-  dispatch(getFocusFilms(serverResponse))
+  dispatch(getFocusFilms(serverResponse.data))
+  dispatch(actionLoaderFalse())
 }
 
 export const getFocusFilms = (film) => {
@@ -43,39 +43,65 @@ export const getFocusFilms = (film) => {
   }
 }
 
-export const thunkSearchGengerFilms = (genger) => async (dispatch, getState) => {
-  const response = await fetch(`https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=%2Fchart%2Fpopular%2Fgenre%2F${genger}`, {
+export const thunkGetTreiler = (id) => async (dispatch, getState) => {
+  const response = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${id}/videos`, {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": `${process.env.REACT_APP_X_RAPIDAPI_KEY}`,
-      "x-rapidapi-host": "imdb8.p.rapidapi.com"
+      'accept': 'application/json',
+      'X-API-KEY': `${process.env.REACT_APP_API_KEY}`,
     }
   })
   const serverResponse = await response.json()
-  const myCurrentArrayGenres = []
-  serverResponse.slice(0, 4).forEach(el => {
-    el.replace('/title/', '')
-    fetch(`https://imdb8.p.rapidapi.com/title/find?q=${el}`, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": `${process.env.REACT_APP_X_RAPIDAPI_KEY}`,
-        "x-rapidapi-host": "imdb8.p.rapidapi.com"
+  const currentYouTube = []
+  if (serverResponse?.trailers.length) {
+    serverResponse?.trailers.forEach(el => {
+      if (el.site.toLowerCase() === 'youtube') {
+        currentYouTube.push(el)
       }
+      currentYouTube.push({ url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' })
     })
-      .then(response => {
-        myCurrentArrayGenres.push(response)
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  })
-  console.log('myCurrentArrayGenres', myCurrentArrayGenres)
-  // dispatch(getGenresFilms(serverResponse.slice(0, 4)))
+  } else {
+    currentYouTube.push({ url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' })
+  }
+  if (currentYouTube) {
+    dispatch(getTreiler(currentYouTube[0]?.url))
+  }
 }
 
-export const getGenresFilms = (films) => {
+export const getTreiler = (url) => {
   return {
-    type: SEARCH_GENGER_FILM,
+    type: GET_TRAILER,
+    payload: url,
+  }
+}
+
+export const thunkSearchLikedFilms = (id) => async (dispatch, getState) => {
+  dispatch(actionLoaderTrue())
+  const response = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}/similars`, {
+    "method": "GET",
+    "headers": {
+      'accept': 'application/json',
+      'X-API-KEY': `${process.env.REACT_APP_API_KEY}`,
+    }
+  })
+  const serverResponse = await response.json()
+  dispatch(getLikedFilms(serverResponse.items.slice(0, 4)))
+  dispatch(actionLoaderFalse())
+
+}
+
+export const getLikedFilms = (films) => {
+  return {
+    type: SEARCH_LIKED_FILM,
     payload: films,
   }
 }
+
+
+export const actionLoaderFalse = () => ({
+  type: LOADER_FALSE,
+})
+
+export const actionLoaderTrue = () => ({
+  type: LOADER_TRUE,
+})
