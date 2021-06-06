@@ -3,8 +3,7 @@ import { Box, Button } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 import { thunkAllFilms } from '../../redux/action/action'
 import './search.css'
-import useStyles from './useStyles.js'
-
+import useStyles from './useStyles'
 
 function CompSearch() {
   const [searchInput, setSearchInput] = useState('')
@@ -28,8 +27,9 @@ function CompSearch() {
       <Box>
         <form onSubmit={searchFilm}>
           <input
-            className='mostInput'
-            onChange={inputHandler} placeholder='Type here smth...'
+            className="mostInput"
+            onChange={inputHandler}
+            placeholder="Type here smth..."
             value={searchInput}
           />
           <Button className={classes.root} onClick={searchFilm} style={{ backgroundColor: 'aqua' }}>Search</Button>

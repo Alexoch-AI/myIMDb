@@ -1,10 +1,12 @@
-import { Box } from "@material-ui/core";
-import Body from "./components/Body/Body";
-import Header from "./components/MainPageTitle/MainPageTitle";
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react'
+import { Box } from '@material-ui/core'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Body from './components/Body/Body'
+import Header from './components/MainPageTitle/MainPageTitle'
 import './main.css'
-import FocusFilm from "./components/FocusFilm/FocusFilm";
-import HeaderFilm from "./components/HeaderFilm/HeaderFilm";
+import FocusFilm from './components/FocusFilm/FocusFilm'
+import HeaderFilm from './components/HeaderFilm/HeaderFilm'
 
 function App() {
   return (
@@ -12,17 +14,17 @@ function App() {
       <Box className="App">
         <HeaderFilm />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <Header />
             <Body />
           </Route>
-          <Route path='/film/:id'>
+          <Route path="/film/:id">
             <FocusFilm />
           </Route>
         </Switch>
       </Box>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

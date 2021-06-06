@@ -3,23 +3,24 @@ import { Grid } from '@material-ui/core'
 import CompSearch from '../CompSearch/CompSearch'
 import ListFilms from '../ListFilms/ListFilms'
 import '../../main.css'
-function Body() {
 
+function Body() {
   return (
-    <Grid container
+    <Grid
+      container
       direction="column"
       alignItems="center"
-      justify="center">
-      <div className='background' />
+      justify="center"
+    >
+      <div className="background" />
       <Grid item xs={12}>
         <CompSearch />
       </Grid>
       <Grid item xs={12}>
         <ListFilms />
       </Grid>
-    </Grid >
+    </Grid>
   )
 }
 
 export default Body
-

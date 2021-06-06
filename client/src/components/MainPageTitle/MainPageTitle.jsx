@@ -4,26 +4,28 @@ import './MainPageTitle.css'
 
 function Header() {
   return (
-    <Grid container
+    <Grid
+      container
       direction="column"
       alignItems="center"
-      justify="center">
+      justify="center"
+    >
       <Grid item xs={12}>
-        <Box paddingTop='20vh' paddingBottom="20px">
-          <Typography variant="h1" align="center" style={{ fontWeight: '900' }} >
+        <Box paddingTop="20vh" paddingBottom="20px">
+          <Typography variant="h1" align="center" style={{ fontWeight: '900' }}>
             Unlimited movies,
-        </Typography>
+          </Typography>
           <Typography variant="h1" align="center" style={{ fontWeight: '900' }}>
             TV shows, and more.
-        </Typography>
+          </Typography>
         </Box>
         <Box>
           <Typography variant="h3" align="center">
             Watch anywhere. Cancel anytime.
-        </Typography>
+          </Typography>
         </Box>
       </Grid>
-    </Grid >
+    </Grid>
   )
 }
 

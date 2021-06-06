@@ -1,11 +1,11 @@
-import { makeStyles } from "@material-ui/core";
-import { fade } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core'
+import { fade } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     position: 'absolute',
-    width: '100%'
+    width: '100%',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: 'auto',
     },
-    marginRight: '25px'
+    marginRight: '25px',
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -59,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
   },
   myBar: {
     backgroundColor: 'black',
-    padding: '0 155px 0 80px'
-  }
-}));
+    padding: '0 155px 0 80px',
+  },
+}))
 
 export default useStyles

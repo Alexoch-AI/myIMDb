@@ -1,8 +1,7 @@
-import { LOADER_FALSE, LOADER_TRUE } from "../types/types"
+import { LOADER_FALSE, LOADER_TRUE } from '../types/types'
 
 const loaderReducer = (state = {}, action) => {
   switch (action.type) {
-
     case LOADER_TRUE:
       return {
         ...state,

@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,16 +8,16 @@ const useStyles = makeStyles((theme) => ({
     background: '#111111',
     opacity: '0.8',
     borderRadius: '10px',
-    color: '#fff'
+    color: '#fff',
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
-    width: 'auto'
+    width: 'auto',
   },
   content: {
     flex: '1 0 auto',
-    width: 'auto'
+    width: 'auto',
   },
   cover: {
     width: '100%',
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(1),
-  }
-}));
+  },
+}))
 
 export default useStyles
