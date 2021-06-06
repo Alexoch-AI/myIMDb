@@ -18,7 +18,7 @@ function LittleFilm({ obj }) {
 
   return (
     <Link style={{ textDecoration: 'none' }} to={`/film/${obj.filmId}`}>
-      <Card onClick={() => clickHandler()} className={classes.root} style={{ width: '450px', cursor: 'pointer' }}>
+      <Card onClick={() => clickHandler()} className={classes.root}>
         <CardMedia
           className={classes.cover}
           image={obj?.posterUrlPreview}
@@ -29,26 +29,32 @@ function LittleFilm({ obj }) {
               title={obj.nameRu || obj.nameEn}
               component="h5"
               variant="h5"
-              style={{
-                textOverflow: 'ellipsis', width: '320px', whiteSpace: 'nowrap', overflow: 'hidden',
-              }}
+              className={classes.hiddenText}
             >
               {obj.nameRu || obj.nameEn}
               <Typography>
                 {obj.year}
+                {' '}
                 |
+                {' '}
                 {Object.values(obj).length ? obj?.countries[0]?.country : null}
+                {' '}
                 |
+                {' '}
                 {Object.values(obj).length ? obj?.genres[0]?.genre : null}
                 <br />
-                <Typography
-                  component="span"
-                  style={{
-                    backgroundColor: '#FAC539', color: 'black', borderRadius: '8px', marginTop: '5px', width: '85px', padding: '0 5px 0 5px',
-                  }}
-                >
-                  {obj?.rating || null}
-                </Typography>
+                {
+                  obj?.rating
+                    ? (
+                      <Typography
+                        component="span"
+                        className={classes.ratingSpan}
+                      >
+                        {obj?.rating}
+                      </Typography>
+                    )
+                    : null
+                }
               </Typography>
             </Typography>
           </CardContent>

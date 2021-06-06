@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
 import { Box, Grid } from '@material-ui/core'
 import React from 'react'
@@ -13,7 +14,6 @@ function ListFilms() {
       <Grid item xs={12}>
         <Box display="flex" flexDirection="column" alignItems="center">
           {
-            // eslint-disable-next-line no-nested-ternary
             loader.loader
               ? <PureLoader />
               : films.length

@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
     opacity: '0.8',
     borderRadius: '10px',
     color: '#fff',
+    width: '450px',
+    cursor: 'pointer',
   },
   details: {
     display: 'flex',
@@ -32,6 +34,20 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(1),
+  },
+  hiddenText: {
+    textOverflow: 'ellipsis',
+    width: '320px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+  },
+  ratingSpan: {
+    backgroundColor: '#FAC539',
+    color: 'black',
+    borderRadius: '8px',
+    marginTop: '5px',
+    width: '85px',
+    padding: '0 5px 0 5px',
   },
 }))
 

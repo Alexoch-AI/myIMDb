@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import SearchIcon from '@material-ui/icons/Search'
 import { thunkAllFilms } from '../../redux/action/action'
 import useStyles from './useStyles'
 
@@ -45,7 +46,9 @@ export default function HeaderFilm() {
             </Link>
           </Typography>
           <div className={classes.search}>
-            <div className={classes.searchIcon} />
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
             <form onSubmit={searchFilm}>
               <InputBase
                 placeholder="Search…"

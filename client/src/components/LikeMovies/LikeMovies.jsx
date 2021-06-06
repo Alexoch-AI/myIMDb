@@ -4,12 +4,13 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { thunkFocusFilms } from '../../redux/action/action'
-import styles from './LikeMovies.module.css'
+import useStyles from './useStyles'
 
 function LikeMovies({ obj }) {
   const [headerLink, setHeaderLink] = useState()
   const dispatch = useDispatch()
   const history = useHistory()
+  const classes = useStyles()
   const clickHandler = () => {
     dispatch(thunkFocusFilms(String(obj.filmId)))
     history.push(`/film/${String(obj.filmId)}`)
@@ -26,17 +27,9 @@ function LikeMovies({ obj }) {
       onClick={() => clickHandler()}
     >
       <img
-        className={styles.myImg}
-        style={{
-          height: '361px',
-          width: '263px',
-          display: 'block',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          borderRadius: '5%',
-        }}
+        className={classes.img1}
         src={obj?.posterUrl}
-        alt="123"
+        alt="imgAlt"
       />
     </Box>
   )

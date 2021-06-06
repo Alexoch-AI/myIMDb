@@ -6,7 +6,7 @@ import Body from './components/Body/Body'
 import Header from './components/MainPageTitle/MainPageTitle'
 import './main.css'
 import FocusFilm from './components/FocusFilm/FocusFilm'
-import HeaderFilm from './components/HeaderFilm/HeaderFilm'
+import HeaderFilm from './components/Header/Header'
 
 function App() {
   return (
