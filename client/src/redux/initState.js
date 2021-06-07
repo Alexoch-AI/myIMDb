@@ -1,3 +1,7 @@
+const persistedState = localStorage.getItem('reduxState')
+  ? JSON.parse(localStorage.getItem('reduxState'))
+  : {}
+
 const initState = () => {
   const state = {
     films: [],
@@ -6,7 +10,7 @@ const initState = () => {
     urlTrailer: '',
     loader: false,
   }
-  return state
+  return persistedState || state
 }
 
 export default initState

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react'
 import { Box } from '@material-ui/core'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import Body from './components/Body/Body'
 import Header from './components/MainPageTitle/MainPageTitle'
 import './main.css'

@@ -18,7 +18,6 @@ function FocusFilm() {
   const [flag, setFlag] = useState(false)
   const dispatch = useDispatch()
   const classes = useStyles()
-
   const currentUrlTrailer = urlTrailer?.replace(/(watch\?v=)/g, 'embed/').replace(/(v\/)/g, 'embed/')
 
   useEffect(() => {
@@ -101,22 +100,22 @@ function FocusFilm() {
                 <Grid item xs={12} className={classes.grid1}>
                   <Box className={classes.boxN3}>
                     <Typography variant="h4" className={classes.typo4}>
-                      Watch
+                      Смотри
                       {' '}
                       {focusFilm?.nameRu || focusFilm?.nameEn}
                       {' '}
-                      on Richbee Shows
+                      на MiniКинопоиске
                     </Typography>
                   </Box>
                   <Box className={classes.boxN4}>
-                    <Typography style={{ fontWeight: '400' }}>
+                    <Typography style={{ fontWeight: '500', fontSize: '22px' }}>
                       {focusFilm?.description || 'Нет описания :С'}
                     </Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={12} className={classes.grid1}>
                   <Typography variant="h5" className={classes.typo5}>
-                    You may also like
+                    Тебе может понравиться
                   </Typography>
                   <Box display="flex" style={{ paddingLeft: '130px' }}>
                     {
