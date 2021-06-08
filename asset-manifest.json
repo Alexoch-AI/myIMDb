@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/myIMDb/static/css/main.83c681a4.chunk.css",
-    "main.js": "/myIMDb/static/js/main.922df2e8.chunk.js",
-    "main.js.map": "/myIMDb/static/js/main.922df2e8.chunk.js.map",
+    "main.css": "/myIMDb/static/css/main.167282c3.chunk.css",
+    "main.js": "/myIMDb/static/js/main.4465433a.chunk.js",
+    "main.js.map": "/myIMDb/static/js/main.4465433a.chunk.js.map",
     "runtime-main.js": "/myIMDb/static/js/runtime-main.7817aa1e.js",
     "runtime-main.js.map": "/myIMDb/static/js/runtime-main.7817aa1e.js.map",
-    "static/js/2.50734015.chunk.js": "/myIMDb/static/js/2.50734015.chunk.js",
-    "static/js/2.50734015.chunk.js.map": "/myIMDb/static/js/2.50734015.chunk.js.map",
+    "static/js/2.8f0ee663.chunk.js": "/myIMDb/static/js/2.8f0ee663.chunk.js",
+    "static/js/2.8f0ee663.chunk.js.map": "/myIMDb/static/js/2.8f0ee663.chunk.js.map",
     "index.html": "/myIMDb/index.html",
-    "static/css/main.83c681a4.chunk.css.map": "/myIMDb/static/css/main.83c681a4.chunk.css.map",
-    "static/js/2.50734015.chunk.js.LICENSE.txt": "/myIMDb/static/js/2.50734015.chunk.js.LICENSE.txt"
+    "static/css/main.167282c3.chunk.css.map": "/myIMDb/static/css/main.167282c3.chunk.css.map",
+    "static/js/2.8f0ee663.chunk.js.LICENSE.txt": "/myIMDb/static/js/2.8f0ee663.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7817aa1e.js",
-    "static/js/2.50734015.chunk.js",
-    "static/css/main.83c681a4.chunk.css",
-    "static/js/main.922df2e8.chunk.js"
+    "static/js/2.8f0ee663.chunk.js",
+    "static/css/main.167282c3.chunk.css",
+    "static/js/main.4465433a.chunk.js"
   ]
 }
