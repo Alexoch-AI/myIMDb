@@ -21,6 +21,7 @@ function LikeMovies({ obj }) {
     const myLink = document.querySelector('#Header')
     setHeaderLink(myLink)
   }, [])
+
   return (
     <Box
       style={{ padding: '20px 20px 20px 0' }}

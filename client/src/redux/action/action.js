@@ -64,7 +64,7 @@ export const thunkGetTreiler = (id) => async (dispatch, getState) => {
     currentYouTube.push({ url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' })
   }
   if (currentYouTube) {
-    dispatch(getTrailer(currentYouTube[0]?.url))
+    dispatch(getTrailer(currentYouTube[0]?.url.replace(/(watch\?v=)/g, 'embed/').replace(/(v\/)/g, 'embed/')))
   }
 }
 

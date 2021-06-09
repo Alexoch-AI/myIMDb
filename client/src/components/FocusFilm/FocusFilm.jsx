@@ -18,7 +18,6 @@ function FocusFilm() {
   const [flag, setFlag] = useState(false)
   const dispatch = useDispatch()
   const classes = useStyles()
-  const currentUrlTrailer = urlTrailer?.replace(/(watch\?v=)/g, 'embed/').replace(/(v\/)/g, 'embed/')
 
   useEffect(() => {
     if (Object.values(focusFilm).length) {
@@ -60,7 +59,7 @@ function FocusFilm() {
                           {Object.values(focusFilm).length ? focusFilm?.genres[0]?.genre : null}
                         </Typography>
                         {
-                          currentUrlTrailer ? (
+                          urlTrailer ? (
                             <Box padding=" 0 0 20px 130px">
                               <Button
                                 onClick={() => setFlag(!flag)}
@@ -78,7 +77,7 @@ function FocusFilm() {
                               <Iframe
                                 width="560"
                                 height="315"
-                                url={currentUrlTrailer}
+                                url={urlTrailer}
                                 title="YouTube video player"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
