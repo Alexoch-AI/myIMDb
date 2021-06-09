@@ -1,8 +1,9 @@
 import { Box, Grid, Typography } from '@material-ui/core'
 import React from 'react'
-import './MainPageTitle.css'
+import useStyles from './useStyles'
 
 function Header() {
+  const classes = useStyles()
   return (
     <Grid
       container
@@ -11,16 +12,16 @@ function Header() {
       justify="center"
     >
       <Grid item xs={12}>
-        <Box paddingTop="20vh" paddingBottom="20px">
-          <Typography variant="h1" align="center" style={{ fontWeight: '900' }}>
+        <Box className={classes.rootBox}>
+          <Typography align="center" className={classes.root}>
             Unlimited movies,
           </Typography>
-          <Typography variant="h1" align="center" style={{ fontWeight: '900' }}>
+          <Typography align="center" className={classes.root}>
             TV shows, and more.
           </Typography>
         </Box>
         <Box>
-          <Typography variant="h3" align="center">
+          <Typography align="center" className={classes.smallroot}>
             Watch anywhere. Cancel anytime.
           </Typography>
         </Box>

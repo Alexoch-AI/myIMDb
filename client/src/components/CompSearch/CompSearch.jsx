@@ -1,8 +1,8 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import React, { useState } from 'react'
 import { Box, Button } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 import { thunkAllFilms } from '../../redux/action/action'
-import './search.css'
 import useStyles from './useStyles'
 
 function CompSearch() {
@@ -23,18 +23,16 @@ function CompSearch() {
   }
 
   return (
-    <Box paddingTop="40px" paddingBottom="40px">
-      <Box>
-        <form onSubmit={searchFilm}>
-          <input
-            className="mostInput"
-            onChange={inputHandler}
-            placeholder="Type here smth..."
-            value={searchInput}
-          />
-          <Button className={classes.root} onClick={searchFilm} style={{ backgroundColor: 'aqua' }}>Search</Button>
-        </form>
-      </Box>
+    <Box className={classes.rootBox}>
+      <form onSubmit={searchFilm} className={classes.rootForm}>
+        <input
+          className={classes.rootSearch}
+          onChange={inputHandler}
+          placeholder="Type here smth..."
+          value={searchInput}
+        />
+        <Button className={classes.root} onClick={searchFilm}>{'Search'}</Button>
+      </form>
     </Box>
   )
 }

@@ -27,7 +27,6 @@ function LittleFilm({ obj }) {
           <CardContent className={classes.content}>
             <Typography
               title={obj.nameRu || obj.nameEn}
-              component="h5"
               variant="h5"
               className={classes.hiddenText}
             >

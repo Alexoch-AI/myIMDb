@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-use-before-define */
 import {
+  CLEAR_STATE,
   GET_TRAILER, LOADER_FALSE, LOADER_TRUE, SEARCH_FILM, SEARCH_LIKED_FILM, TAKE_FILM,
 } from '../types/types'
 
@@ -97,4 +98,9 @@ export const actionLoaderFalse = () => ({
 
 export const actionLoaderTrue = () => ({
   type: LOADER_TRUE,
+})
+
+export const clearReduxState = (enptyState) => ({
+  type: CLEAR_STATE,
+  payload: enptyState,
 })

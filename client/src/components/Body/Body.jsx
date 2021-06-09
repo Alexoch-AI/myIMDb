@@ -8,9 +8,6 @@ function Body() {
   return (
     <Grid
       container
-      direction="column"
-      alignItems="center"
-      justify="center"
     >
       <div className="background" />
       <Grid item xs={12}>

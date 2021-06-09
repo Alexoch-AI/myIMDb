@@ -9,8 +9,19 @@ const useStyles = makeStyles((theme) => ({
     opacity: '0.8',
     borderRadius: '10px',
     color: '#fff',
-    width: '450px',
+    width: '350px',
     cursor: 'pointer',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      justifyContent: 'center',
+      margin: '10px',
+      background: '#111111',
+      opacity: '0.8',
+      borderRadius: '10px',
+      color: '#fff',
+      width: '450px',
+      cursor: 'pointer',
+    },
   },
   details: {
     display: 'flex',
@@ -23,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     width: '100%',
-    backgroundSize: 'contain',
+    backgroundSize: 'containe',
     opacity: '1',
     marginTop: '5px',
     marginBottom: '5px',
@@ -37,9 +48,15 @@ const useStyles = makeStyles((theme) => ({
   },
   hiddenText: {
     textOverflow: 'ellipsis',
-    width: '320px',
+    width: '250px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
+    [theme.breakpoints.up('md')]: {
+      textOverflow: 'ellipsis',
+      width: '320px',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+    },
   },
   ratingSpan: {
     backgroundColor: '#FAC539',

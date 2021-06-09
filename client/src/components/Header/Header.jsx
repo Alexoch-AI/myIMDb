@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import SearchIcon from '@material-ui/icons/Search'
-import { thunkAllFilms } from '../../redux/action/action'
+import { clearReduxState, thunkAllFilms } from '../../redux/action/action'
 import useStyles from './useStyles'
 
 export default function HeaderFilm() {
@@ -30,18 +29,17 @@ export default function HeaderFilm() {
     }
   }
 
+  const clearLocalStorage = () => {
+    localStorage.removeItem('reduxState')
+    dispatch(clearReduxState({}))
+  }
+
   return (
     <div className={classes.root} id="Header">
       <AppBar position="static" className={classes.myBar}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          />
           <Typography className={classes.title} variant="h5" noWrap>
-            <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
+            <Link style={{ textDecoration: 'none', color: 'white' }} to="/" onClick={() => clearLocalStorage()}>
               MiniКинопоиск
             </Link>
           </Typography>

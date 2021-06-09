@@ -7,31 +7,31 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: '100%',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     flexGrow: 1,
-    display: 'none',
+    display: 'block',
+    overflow: 'visible',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
   search: {
-    position: 'absolute',
+    display: 'flex',
+    position: 'relative',
     right: '0',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginLeft: 0,
+    marginLeft: '25px',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
+      // marginLeft: theme.spacing(1),
+      display: 'block',
       width: 'auto',
+      marginRight: '25px',
     },
-    marginRight: '25px',
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -59,7 +59,10 @@ const useStyles = makeStyles((theme) => ({
   },
   myBar: {
     backgroundColor: 'black',
-    padding: '0 155px 0 80px',
+    padding: '0 0 0 0',
+    [theme.breakpoints.up('sm')]: {
+      padding: '0 155px 0 80px',
+    },
   },
 }))
 
