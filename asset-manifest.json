@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/myIMDb/static/css/main.167282c3.chunk.css",
-    "main.js": "/myIMDb/static/js/main.76404950.chunk.js",
-    "main.js.map": "/myIMDb/static/js/main.76404950.chunk.js.map",
+    "main.js": "/myIMDb/static/js/main.96541bf0.chunk.js",
+    "main.js.map": "/myIMDb/static/js/main.96541bf0.chunk.js.map",
     "runtime-main.js": "/myIMDb/static/js/runtime-main.7817aa1e.js",
     "runtime-main.js.map": "/myIMDb/static/js/runtime-main.7817aa1e.js.map",
-    "static/js/2.1c54db45.chunk.js": "/myIMDb/static/js/2.1c54db45.chunk.js",
-    "static/js/2.1c54db45.chunk.js.map": "/myIMDb/static/js/2.1c54db45.chunk.js.map",
+    "static/js/2.0704e2cb.chunk.js": "/myIMDb/static/js/2.0704e2cb.chunk.js",
+    "static/js/2.0704e2cb.chunk.js.map": "/myIMDb/static/js/2.0704e2cb.chunk.js.map",
     "index.html": "/myIMDb/index.html",
     "static/css/main.167282c3.chunk.css.map": "/myIMDb/static/css/main.167282c3.chunk.css.map",
-    "static/js/2.1c54db45.chunk.js.LICENSE.txt": "/myIMDb/static/js/2.1c54db45.chunk.js.LICENSE.txt"
+    "static/js/2.0704e2cb.chunk.js.LICENSE.txt": "/myIMDb/static/js/2.0704e2cb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7817aa1e.js",
-    "static/js/2.1c54db45.chunk.js",
+    "static/js/2.0704e2cb.chunk.js",
     "static/css/main.167282c3.chunk.css",
-    "static/js/main.76404950.chunk.js"
+    "static/js/main.96541bf0.chunk.js"
   ]
 }
