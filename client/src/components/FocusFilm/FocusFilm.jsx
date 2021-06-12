@@ -42,7 +42,7 @@ function FocusFilm() {
                 <Box className={classes.boxN2}>
                   <Grid item xs={12}>
                     <Box display="flex">
-                      <Box width="1000px">
+                      <Box width="100%">
                         <Typography variant="h2" className={classes.typo1}>
                           {focusFilm?.nameRu || focusFilm?.nameEn}
                         </Typography>
@@ -60,7 +60,7 @@ function FocusFilm() {
                         </Typography>
                         {
                           urlTrailer ? (
-                            <Box padding=" 0 0 20px 130px">
+                            <Box className={classes.boxButton1}>
                               <Button
                                 onClick={() => setFlag(!flag)}
                                 className={classes.button1}
@@ -73,10 +73,10 @@ function FocusFilm() {
                         }
                         {flag
                           ? (
-                            <Box style={{ paddingLeft: '130px' }}>
+                            <Box className={classes.videoBox}>
                               <Iframe
-                                width="560"
-                                height="315"
+                                width="95%"
+                                height="400px"
                                 url={urlTrailer}
                                 title="YouTube video player"
                                 frameborder="0"
@@ -86,13 +86,19 @@ function FocusFilm() {
                           )
                           : ''}
                       </Box>
-                      <Box style={{ width: '1000px', paddingTop: '150px' }}>
-                        <img
-                          className={classes.img1}
-                          src={focusFilm?.posterUrl}
-                          alt="mainImg"
-                        />
-                      </Box>
+                      {
+                        !flag
+                          ? (
+                            <Box className={classes.mainImgBox}>
+                              <img
+                                className={classes.img1}
+                                src={focusFilm?.posterUrl}
+                                alt="mainImg"
+                              />
+                            </Box>
+                          )
+                          : null
+                      }
                     </Box>
                   </Grid>
                 </Box>
@@ -116,7 +122,7 @@ function FocusFilm() {
                   <Typography variant="h5" className={classes.typo5}>
                     Тебе может понравиться
                   </Typography>
-                  <Box display="flex" style={{ paddingLeft: '130px' }}>
+                  <Box className={classes.listBox}>
                     {
                       likesFilms.length ? likesFilms.map((el) => (
                         <LikeMovies

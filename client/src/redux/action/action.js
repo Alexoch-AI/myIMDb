@@ -15,7 +15,7 @@ export const thunkAllFilms = (searchInput) => async (dispatch, getState) => {
     },
   })
   const serverResponse = await response.json()
-  dispatch(getAllFilms(serverResponse.films.slice(0, 7)))
+  dispatch(getAllFilms(serverResponse?.films?.slice(0, 7)))
   dispatch(actionLoaderFalse())
 }
 
