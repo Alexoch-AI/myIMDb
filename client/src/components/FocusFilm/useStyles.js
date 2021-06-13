@@ -1,6 +1,14 @@
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
+  superDiv: {
+    display: 'flex',
+    flexDirection: 'column',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+  },
   boxN1: {
     display: 'flex',
     flexDirection: 'column',
@@ -9,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxN2: {
     backgroundColor: 'black',
-    height: '110vh',
+    height: '100vh',
     width: '100%',
     textShadow: 'black 0 0 6px',
     [theme.breakpoints.up('md')]: {
@@ -44,9 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mainImgBox: {
-    width: '100%',
-    marginTop: '95%',
-    position: 'absolute',
+    padding: '0 0 0 0',
     [theme.breakpoints.up('md')]: {
       position: 'relative',
       width: '1000px',
@@ -115,6 +121,7 @@ const useStyles = makeStyles((theme) => ({
       width: '800px',
       paddingBottom: '50px',
       paddingLeft: '130px',
+      padding: '0 0 50px 130px',
     },
   },
   typo5: {

@@ -41,8 +41,8 @@ function FocusFilm() {
               <Grid container style={{ color: 'white' }}>
                 <Box className={classes.boxN2}>
                   <Grid item xs={12}>
-                    <Box display="flex">
-                      <Box width="100%">
+                    <Box className={classes.superDiv}>
+                      <Box width="95%">
                         <Typography variant="h2" className={classes.typo1}>
                           {focusFilm?.nameRu || focusFilm?.nameEn}
                         </Typography>

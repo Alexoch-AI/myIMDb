@@ -9,7 +9,6 @@ function Body() {
     <Grid
       container
     >
-      <div className="background" />
       <Grid item xs={12}>
         <CompSearch />
       </Grid>

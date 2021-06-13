@@ -31,7 +31,7 @@ function CompSearch() {
           placeholder="Type here smth..."
           value={searchInput}
         />
-        <Button className={classes.root} onClick={searchFilm}>{'Search'}</Button>
+        <Button className={classes.root} type="submit">{'Search'}</Button>
       </form>
     </Box>
   )

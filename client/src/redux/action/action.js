@@ -83,7 +83,7 @@ export const thunkSearchLikedFilms = (id) => async (dispatch, getState) => {
     },
   })
   const serverResponse = await response.json()
-  dispatch(getLikedFilms(serverResponse.items.slice(0, 4)))
+  dispatch(getLikedFilms(serverResponse?.items?.slice(0, 4)))
   dispatch(actionLoaderFalse())
 }
 
